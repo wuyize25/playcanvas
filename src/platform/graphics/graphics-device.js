@@ -783,7 +783,8 @@ class GraphicsDevice extends EventHandler {
     _isBrowserInterface(texture) {
         return this._isImageBrowserInterface(texture) ||
                 this._isImageCanvasInterface(texture) ||
-                this._isImageVideoInterface(texture);
+                this._isImageVideoInterface(texture)  ||
+                this._isImageVideoFrameInterface(texture);
     }
 
     _isImageBrowserInterface(texture) {
@@ -797,6 +798,10 @@ class GraphicsDevice extends EventHandler {
 
     _isImageVideoInterface(texture) {
         return (typeof HTMLVideoElement !== 'undefined' && texture instanceof HTMLVideoElement);
+    }
+
+    _isImageVideoFrameInterface(texture) {
+        return (typeof VideoFrame !== 'undefined' && texture instanceof VideoFrame);
     }
 
     /**

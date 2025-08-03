@@ -698,6 +698,9 @@ class WebglTexture {
                             mipObject
                         );
 
+                        if(device._isImageVideoFrameInterface(mipObject))
+                            mipObject.close();
+
                         if (mipLevel === 0) {
                             texture._width = w;
                             texture._height = h;

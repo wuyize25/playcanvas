@@ -4,7 +4,7 @@ import { platform } from '../../core/platform.js';
 
 // sort blind set of data
 function SortWorker() {
-    const myself = (typeof self !== 'undefined' && self) || (require('node:worker_threads').parentPort);
+    const myself = (typeof self !== 'undefined' && self);
 
     let order;
     let centers;

@@ -679,7 +679,7 @@ class WebglTexture {
 
                     // TEMP: disable fast path for video updates until
                     // https://bugs.chromium.org/p/chromium/issues/detail?id=1511207 is resolved
-                    if (this._glCreated && texture._width === w && texture._height === h && !device._isImageVideoInterface(mipObject)) {
+                    if (this._glCreated && texture._width === w && texture._height === h && !device._isImageVideoInterface(mipObject) && !device._isImageVideoFrameInterface(mipObject)) {
                         gl.texSubImage2D(
                             gl.TEXTURE_2D,
                             mipLevel,
@@ -697,6 +697,9 @@ class WebglTexture {
                             this._glPixelType,
                             mipObject
                         );
+
+                        if (device._isImageVideoFrameInterface(mipObject))
+                            mipObject.close();
 
                         if (mipLevel === 0) {
                             texture._width = w;

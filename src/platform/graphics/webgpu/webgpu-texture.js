@@ -403,6 +403,7 @@ class WebgpuTexture {
     isExternalImage(image) {
         return (typeof ImageBitmap !== 'undefined' && image instanceof ImageBitmap) ||
             (typeof HTMLVideoElement !== 'undefined' && image instanceof HTMLVideoElement) ||
+            (typeof VideoFrame !== 'undefined' && image instanceof VideoFrame) ||
             (typeof HTMLCanvasElement !== 'undefined' && image instanceof HTMLCanvasElement) ||
             (typeof OffscreenCanvas !== 'undefined' && image instanceof OffscreenCanvas);
     }

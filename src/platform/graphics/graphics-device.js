@@ -289,6 +289,13 @@ class GraphicsDevice extends EventHandler {
     supportsClipDistances = false;
 
     /**
+     * True if the device supports subgroups (WebGPU only).
+     *
+     * @type {boolean}
+     */
+    supportsSubgroups = false;
+
+    /**
      * True if 32-bit floating-point textures can be used as a frame buffer.
      *
      * @type {boolean}

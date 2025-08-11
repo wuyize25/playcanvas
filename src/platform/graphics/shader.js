@@ -82,6 +82,8 @@ class Shader {
      * Passing an array will set the output type for each color attachment.
      * @param {string} [definition.shaderLanguage] - Specifies the shader language of vertex and
      * fragment shaders. Defaults to {@link SHADERLANGUAGE_GLSL}.
+     * @param {object} [definition.computeUniformBufferFormats]
+     * @param {BindGroupFormat} [definition.computeBindGroupFormat]
      * @example
      * // Create a shader that renders primitives with a solid red color
      *

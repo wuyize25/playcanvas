@@ -53,6 +53,12 @@ class WebgpuShader {
     computeEntryPoint = 'main';
 
     /**
+     * A sequence of record types, with the structure (id, value),
+     * representing override values for WGSL constants that can be overridden in the pipeline.
+     */
+    constants = {};
+
+    /**
      * @param {Shader} shader - The shader.
      */
     constructor(shader) {

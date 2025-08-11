@@ -32,7 +32,8 @@ class WebgpuComputePipeline extends WebgpuPipeline {
         const desc = {
             compute: {
                 module: webgpuShader.getComputeShaderModule(),
-                entryPoint: webgpuShader.computeEntryPoint
+                entryPoint: webgpuShader.computeEntryPoint,
+                constants: webgpuShader.constants
             },
 
             // uniform / texture binding layout
